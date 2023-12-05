@@ -1,0 +1,17 @@
+[
+    {
+      "username": "Tessa Davidson",
+      "email": "tessa@test.dev",
+      "password": "password1"
+    },
+    {
+      "username": "Sam Ebadi Sobi",
+      "email": "sam@test.dev",
+      "password": "password1"
+    },
+    {
+      "username": "Test User",
+      "email": "test@test.dev",
+      "password": "password1"
+    }
+]
