@@ -1,0 +1,17 @@
+.nav-ul {
+	font-size: 2rem;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	display: flex;
+	margin: 1rem;
+	& h1 {
+		margin-right: auto;
+	}
+
+	& > li {
+		&:hover {
+			color: red;
+		}
+	}
+}

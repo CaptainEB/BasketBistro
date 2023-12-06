@@ -1,0 +1,21 @@
+footer {
+	position: relative;
+	padding-block: 1rem;
+	&::after {
+		content: '';
+		position: absolute;
+		width: 80%;
+		height: 1px;
+		top: 0;
+		left: 10%;
+		background-color: rgba(0, 0, 0, 0.25);
+		margin: 1rem auto;
+	}
+}
+
+.footer-text {
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.35);
+	text-align: center;
+}

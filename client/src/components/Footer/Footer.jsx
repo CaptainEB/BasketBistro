@@ -1,3 +1,9 @@
+import './Footer.scss';
+
 export default function Footer() {
-	return <div>Footer</div>;
+	return (
+		<footer>
+			<h3 className="footer-text">copyright © Basket Bistro</h3>
+		</footer>
+	);
 }
