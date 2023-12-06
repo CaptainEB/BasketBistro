@@ -20,13 +20,18 @@ const userSchema = new Schema({
       required: true,
       minlength: 5,
     },
-    // CONNECT TO OTHER MODELS AND SCHEMA
-    // thoughts: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Thought',
-    //   },
-    // ],
+    recipe: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe'
+      },
+    ],
+    list: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'List'
+      }
+    ]
   });
   
   // Set up pre-save middleware to create password
