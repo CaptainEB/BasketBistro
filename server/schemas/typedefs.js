@@ -43,6 +43,7 @@ const typeDefs = `
         getUser(id: ID!): User
         getUsers: [User]
         getRecipe(id: ID!): Recipe
+        getRecipes: [Recipe]
         getList(id: ID!): List
     }
 
