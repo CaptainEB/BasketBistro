@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 import './Nav.scss';
 
 export default function Nav() {
@@ -27,6 +28,9 @@ export default function Nav() {
 				</li>
 				<li>
 					<Link to="/profile">Profile</Link>
+				</li>
+				<li>
+					<button onClick={Auth.logout}>Logout</button>
 				</li>
 			</ul>
 		</nav>
