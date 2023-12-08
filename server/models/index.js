@@ -1,4 +1,5 @@
-// require models created in this folder
-// const ______ = require('./_______);
+const User = require('./User');
+const Recipe = require('./Recipe');
+const List = require('./List');
 
-// module.exports = { _____ };
+module.exports = { User, Recipe, List };
