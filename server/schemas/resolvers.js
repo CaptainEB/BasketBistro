@@ -18,6 +18,9 @@ const resolvers = {
 		getRecipe: async (parent, { id }) => {
 			return await Recipe.findById(id);
 		},
+		getRecipes: async () => {
+			return await Recipe.find();
+		},
 		getList: async (parent, { id }) => {
 			return await List.findById(id);
 		},
