@@ -19,8 +19,13 @@ const typeDefs = `
     type Ingredient {
         _id: ID
         ingredientName: String
-         amount: Float
+        amount: Float
     }
+
+    input IngredientInput {
+        ingredientName: String
+        amount: Float
+      }
 
     type List {
         _id: ID
@@ -35,6 +40,7 @@ const typeDefs = `
     type Query {
         me: User
         getUser(id: ID!): User
+        getUsers: [User]
         getRecipe(id: ID!): Recipe
         getList(id: ID!): List
     }
@@ -42,9 +48,9 @@ const typeDefs = `
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        updateUser(id: ID!, username: String, email: String, password: String, recipe: [ID], list: [ID]): User
+        updateUser(username: String, email: String, password: String): User
         deleteUser(id: ID!): User
-        addRecipe(name: String!, description: String, image: String, ingredients: [ID]!): Recipe
+        addRecipe(name: String!, description: String, image: String, ingredients: [IngredientInput]!): Recipe
         addList(recipes: [ID]!): List
     }
 
