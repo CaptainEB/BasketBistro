@@ -5,6 +5,7 @@ import { LOGIN_USER } from '../../utils/mutations';
 
 export default function Login() {
 	const [formState, setFormState] = useState({ email: '', password: '' });
+	const [login, { error, data }] = useMutation(LOGIN_USER);
 
 	function handleChange(event) {
 		const { name, value } = event.target;
