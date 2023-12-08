@@ -23,9 +23,9 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
-      const user = new User({ username, email, password });
+      const user = await User.create({ username, email, password });
       const token = signToken(user);
-      return { token, user };;
+      return { token, user };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -50,10 +50,17 @@ const resolvers = {
     deleteUser: async (parent, { id }) => {
       return await User.findByIdAndRemove(id);
     },
-    addRecipe: async (parent, { name, description, image, ingredients }) => {
-      const newRecipe = new Recipe({ name, description, image, ingredients });
-      return await newRecipe.save();
+    addRecipe: async (parent, { name, description, image, ingredients }, context) => {
+      if (context.user) {
+        const newRecipe = await Recipe.create({ 
+          name, description, image, ingredients 
+        });
+        return newRecipe;
+
+      }
     },
+
+
     addList: async (parent, args) => {
       const newList = new List(args);
       return await newList.save();

@@ -25,7 +25,7 @@ const typeDefs = `
 
     type List {
         _id: ID
-        recipes [Recipe]
+        recipes: [Recipe]
     }   
     
     type Auth {
@@ -41,7 +41,8 @@ const typeDefs = `
     }
 
     type Mutation {
-        addUser(username: String!, email: String!, password: String!, recipe: [ID], list: [ID]): User
+        addUser(username: String!, email: String!, password: String!): User
+        login(email: String!, password: String!): Auth
         updateUser(id: ID!, username: String, email: String, password: String, recipe: [ID], list: [ID]): User
         deleteUser(id: ID!): User
         addRecipe(name: String!, description: String, image: String, ingredients: [ID]!): Recipe
