@@ -35,16 +35,14 @@ export const ADD_RECIPE = gql`
 	}
 `;
 
-export const ADD_LIST = gql`
-	mutation Mutation($recipes: [ID]!) {
-		addList(recipes: $recipes) {
-			recipes {
-				ingredients {
-					amount
-					ingredientName
-					_id
-				}
+export const UPDATE_LIST = gql`
+	mutation Mutation($recipeId: ID!) {
+		updateList(recipeId: $recipeId) {
+			name
+			ingredients {
 				_id
+				amount
+				ingredientName
 			}
 			_id
 		}
