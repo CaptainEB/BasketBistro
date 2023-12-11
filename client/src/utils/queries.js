@@ -16,17 +16,17 @@ export const GET_RECIPES = gql`
 `;
 
 export const GET_LIST = gql`
-	query Query($getListId: ID!) {
-		getList(id: $getListId) {
-			recipes {
-				ingredients {
-					ingredientName
-					amount
-					_id
-				}
+	query Query {
+		getUserList {
+			list {
 				_id
+				name
+				ingredients {
+					_id
+					amount
+					ingredientName
+				}
 			}
-			_id
 		}
 	}
 `;

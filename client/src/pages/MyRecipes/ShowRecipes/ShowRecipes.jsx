@@ -1,17 +1,21 @@
 import { useMutation, useQuery } from '@apollo/client';
-import { ADD_LIST } from '/src/utils/mutations';
+import { UPDATE_LIST } from '/src/utils/mutations';
 import { GET_RECIPES } from '/src/utils/queries';
 
 export default function ShowRecipes() {
 	const { data, loading } = useQuery(GET_RECIPES);
-	const [addRecipeToList] = useMutation(ADD_LIST);
+	const [addRecipeToList] = useMutation(UPDATE_LIST);
 
 	async function addToList(e, recipe) {
-		await addRecipeToList({
-			variables: {
-				recipes: recipe._id,
-			},
-		});
+		try {
+			await addRecipeToList({
+				variables: {
+					recipeId: recipe._id,
+				},
+			});
+		} catch (error) {
+			console.error(error);
+		}
 	}
 
 	return (
