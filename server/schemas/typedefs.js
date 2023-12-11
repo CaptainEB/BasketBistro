@@ -5,7 +5,7 @@ const typeDefs = `
         email: String
         password: String
         recipes: [Recipe]
-        list: [List]
+        list: [Recipe]
     }
 
     type Recipe {
@@ -26,11 +26,6 @@ const typeDefs = `
         ingredientName: String
         amount: Float
       }
-
-    type List {
-        _id: ID
-        recipes: [Recipe]
-    }   
     
     type Auth {
         token: ID!
@@ -43,7 +38,7 @@ const typeDefs = `
         getUsers: [User]
         getRecipe(id: ID!): Recipe
         getRecipes: [Recipe]
-        getList(id: ID!): List
+        getUserList: [User]
     }
 
     type Mutation {
@@ -52,7 +47,7 @@ const typeDefs = `
         updateUser(username: String, email: String, password: String): User
         deleteUser(id: ID!): User
         addRecipe(name: String!, description: String, image: String, ingredients: [IngredientInput]!): Recipe
-        addList(recipes: [ID]!): List
+        updateList(name: String!, description: String, image: String, ingredients: [IngredientInput]!): Recipe
     }
 
 

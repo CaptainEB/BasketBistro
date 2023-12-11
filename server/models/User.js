@@ -29,7 +29,7 @@ const userSchema = new Schema({
     list: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'List'
+        ref: 'Recipe'
       }
     ]
   });
