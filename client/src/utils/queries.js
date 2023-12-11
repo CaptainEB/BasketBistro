@@ -18,15 +18,13 @@ export const GET_RECIPES = gql`
 export const GET_LIST = gql`
 	query Query {
 		getUserList {
-			list {
+			name
+			ingredients {
+				ingredientName
+				amount
 				_id
-				name
-				ingredients {
-					_id
-					amount
-					ingredientName
-				}
 			}
+			_id
 		}
 	}
 `;

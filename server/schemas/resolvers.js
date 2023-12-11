@@ -24,7 +24,6 @@ const resolvers = {
 		getUserList: async (parent, args, context) => {
 			if (context.user) {
 				const user = await User.findById(context.user._id).populate('list');
-				console.log(user.list);
 				return user.list;
 			}
 		},
