@@ -1,8 +1,19 @@
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
+import { ADD_LIST } from '/src/utils/mutations';
 import { GET_RECIPES } from '/src/utils/queries';
 
 export default function ShowRecipes() {
 	const { data, loading } = useQuery(GET_RECIPES);
+	const [addRecipeToList] = useMutation(ADD_LIST);
+
+	async function addToList(e, recipe) {
+		await addRecipeToList({
+			variables: {
+				recipes: recipe._id,
+			},
+		});
+	}
+
 	return (
 		<section>
 			{data?.getRecipes?.map((recipe) => {
@@ -20,6 +31,13 @@ export default function ShowRecipes() {
 								);
 							})}
 						</div>
+						<button
+							onClick={(e) => {
+								addToList(e, recipe);
+							}}
+						>
+							Add to List
+						</button>
 					</div>
 				);
 			})}

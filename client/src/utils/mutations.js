@@ -34,3 +34,19 @@ export const ADD_RECIPE = gql`
 		}
 	}
 `;
+
+export const ADD_LIST = gql`
+	mutation Mutation($recipes: [ID]!) {
+		addList(recipes: $recipes) {
+			recipes {
+				ingredients {
+					amount
+					ingredientName
+					_id
+				}
+				_id
+			}
+			_id
+		}
+	}
+`;
