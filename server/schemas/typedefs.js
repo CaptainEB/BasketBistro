@@ -14,6 +14,7 @@ const typeDefs = `
         description: String
         image: String
         ingredients: [Ingredient]
+        user: User!
     }
         
     type Ingredient {
@@ -39,6 +40,7 @@ const typeDefs = `
         getRecipe(id: ID!): Recipe
         getRecipes: [Recipe]
         getUserList: [Recipe]
+        getUserRecipes(userId: ID!): [Recipe]
     }
 
     type Mutation {

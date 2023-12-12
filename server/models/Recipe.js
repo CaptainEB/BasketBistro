@@ -19,7 +19,11 @@ const recipeSchema = new Schema({
     image: {
         type: String,
     },
-    ingredients: [ingredientSchema]
+    ingredients: [ingredientSchema],
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    }
 });
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
