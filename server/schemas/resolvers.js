@@ -86,6 +86,19 @@ const resolvers = {
         return newRecipe;
       }
     },
+    deleteRecipe: async (parent, { recipeId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('You are not authenticated');
+      }
+      // Find the recipe by ID and the user's ID to ensure they own the recipe
+      const recipe = await Recipe.findOne({ _id: recipeId, user: context.user._id });
+      if (!recipe) {
+        throw new Error('Recipe not found');
+      }
+      // Delete the recipe
+      await Recipe.findByIdAndRemove(recipeId);
+      return recipe;
+    },
     updateList: async (parent, { recipeId }, context) => {
       if (context.user) {
         try {

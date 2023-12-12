@@ -49,6 +49,7 @@ const typeDefs = `
         updateUser(username: String, email: String, password: String): User
         deleteUser(id: ID!): User
         addRecipe(name: String!, description: String, image: String, ingredients: [IngredientInput]!): Recipe
+        deleteRecipe(recipeId: ID!): Recipe
         updateList(recipeId: ID!): Recipe
     }
 
