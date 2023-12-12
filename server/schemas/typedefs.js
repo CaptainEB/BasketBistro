@@ -30,7 +30,7 @@ const typeDefs = `
     type Auth {
         token: ID!
         user: User
-  }
+    }
 
     type Query {
         me: User
@@ -38,7 +38,7 @@ const typeDefs = `
         getUsers: [User]
         getRecipe(id: ID!): Recipe
         getRecipes: [Recipe]
-        getUserList: [User]
+        getUserList: [Recipe]
     }
 
     type Mutation {
