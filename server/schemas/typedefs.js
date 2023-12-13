@@ -51,6 +51,7 @@ const typeDefs = `
         addRecipe(name: String!, description: String, image: String, ingredients: [IngredientInput]!): Recipe
         deleteRecipe(recipeId: ID!): Recipe
         updateList(recipeId: ID!): Recipe
+        clearList: String
     }
 
 
