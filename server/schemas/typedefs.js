@@ -40,7 +40,7 @@ const typeDefs = `
         getRecipe(id: ID!): Recipe
         getRecipes: [Recipe]
         getUserList: [Recipe]
-        getUserRecipes(userId: ID!): [Recipe]
+        getUserRecipes: [Recipe]
     }
 
     type Mutation {

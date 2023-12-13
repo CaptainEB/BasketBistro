@@ -1,17 +1,48 @@
+$primary: rgb(109, 89, 0);
+$primary-background: rgb(255, 252, 236);
+
+nav {
+	font-family: 'Rethink Sans', sans-serif;
+	background-color: $primary-background;
+}
+
 .nav-ul {
 	font-size: 2rem;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 	display: flex;
-	margin: 1rem;
-	& h1 {
-		margin-right: auto;
-	}
-
-	& > li {
+	margin-inline: 5%;
+	li {
+		border-bottom: 1px solid transparent;
+		transition: all 0.1s ease-in-out;
+		padding: 0.25em 0.5em;
 		&:hover {
-			color: red;
+			border-bottom: 1px solid $primary;
 		}
+		&:last-child,
+		&:first-child {
+			border-bottom-color: transparent;
+		}
+	}
+}
+
+.logo {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-right: auto;
+}
+
+.btn {
+	cursor: pointer;
+	font-size: 2rem;
+	padding: 0.25em 0.5em;
+	border: 1px solid transparent;
+	border-bottom-color: $primary;
+	border-radius: 0.25rem;
+	transition: all 0.1s ease-in-out;
+	background-color: transparent;
+	&:hover {
+		border-color: $primary;
 	}
 }

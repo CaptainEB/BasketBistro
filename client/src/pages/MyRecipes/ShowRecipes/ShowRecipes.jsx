@@ -1,9 +1,10 @@
 import { useMutation, useQuery } from '@apollo/client';
+import './ShowRecipes.scss';
 import { UPDATE_LIST } from '/src/utils/mutations';
-import { GET_RECIPES } from '/src/utils/queries';
+import { GET_USER_RECIPES } from '/src/utils/queries';
 
 export default function ShowRecipes() {
-	const { data, loading } = useQuery(GET_RECIPES);
+	const { data, loading } = useQuery(GET_USER_RECIPES);
 	const [addRecipeToList] = useMutation(UPDATE_LIST);
 
 	async function addToList(e, recipe) {
@@ -19,29 +20,27 @@ export default function ShowRecipes() {
 	}
 
 	return (
-		<section>
-			{data?.getRecipes?.map((recipe) => {
+		<section className="container">
+			{data?.getUserRecipes?.map((recipe) => {
 				return (
-					<div key={recipe._id}>
-						<h2>{recipe.name}</h2>
-						<p>{recipe?.description}</p>
-						<div>
-							{recipe.ingredients.map((ingredient) => {
-								return (
-									<div key={ingredient._id}>
-										<span>{ingredient.ingredientName}</span>
-										<span>{ingredient.amount}</span>
-									</div>
-								);
-							})}
+					<div key={recipe._id} className="recipe-card">
+						{recipe?.image ? (
+							<img className="recipe-image" src={recipe?.image} alt={recipe.name} height={200} width={200} />
+						) : (
+							<div className="recipe-image" />
+						)}
+						<div className="recipe-info">
+							<h2 className="recipe-name">{recipe.name}</h2>
 						</div>
-						<button
-							onClick={(e) => {
-								addToList(e, recipe);
-							}}
-						>
-							Add to List
-						</button>
+						<div className="add-recipe-btn">
+							<button
+								onClick={(e) => {
+									addToList(e, recipe);
+								}}
+							>
+								+
+							</button>
+						</div>
 					</div>
 				);
 			})}

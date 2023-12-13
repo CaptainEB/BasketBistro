@@ -1,16 +1,15 @@
 import AddRecipe from './AddRecipe';
+import './MyRecipes.scss';
 import ShowRecipes from './ShowRecipes';
 
 export default function MyRecipes() {
 	return (
-		<section className="container">
-			<div>
+		<section>
+			<div className="my-recipes-top">
 				<h1>My Recipes</h1>
-				<ShowRecipes />
-			</div>
-			<div>
 				<AddRecipe />
 			</div>
+			<ShowRecipes />
 		</section>
 	);
 }
