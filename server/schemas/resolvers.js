@@ -119,6 +119,15 @@ const resolvers = {
 				throw AuthenticationError;
 			}
 		},
+		clearList: async (parent, args, context) => {
+			if (!context.user) {
+				throw new AuthenticationError('You are not authenticated');
+			}
+			const user = await User.findById(context.user._id);
+			user.list = []; // Set the list to an empty array
+			await user.save();
+			return 'List cleared successfully';
+		}, 
 	},
 };
 // User: {
