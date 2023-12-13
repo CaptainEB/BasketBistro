@@ -13,6 +13,9 @@ $recipe-image-background: rgb(230, 181, 76);
 	object-fit: cover;
 	background-color: $recipe-image-background;
 	border-radius: 1rem;
+	box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.7);
 }
 
 .recipe-name {
