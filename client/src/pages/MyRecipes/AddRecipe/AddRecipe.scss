@@ -1,0 +1,94 @@
+$primary: rgb(109, 89, 0);
+$primary-background: rgb(255, 252, 236);
+
+.add-recipe {
+	cursor: pointer;
+	font-size: 2rem;
+	padding: 0.25em 0.5em;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	transition: all 0.1s ease-in-out;
+	background-color: transparent;
+	&:hover {
+		border-bottom-color: $primary;
+	}
+}
+
+.add-recipe-container {
+	position: relative;
+}
+
+.add-recipe-dialog {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 2px solid $primary;
+	padding: 1rem;
+
+	background-color: $primary-background;
+	border-radius: 0.75rem;
+	.dialog-content {
+		display: flex;
+		gap: 2rem;
+	}
+
+	&::backdrop {
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	& * {
+		font-family: 'Rethink Sans', sans-serif;
+	}
+	input {
+		padding: 0.25em 0.5em;
+	}
+	.recipe-info {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		input {
+			width: 100%;
+			border: 1px solid $primary;
+			border-radius: 0.25rem;
+			font-size: 1rem;
+		}
+		button {
+			width: 20%;
+			margin-inline: auto;
+			padding: 0.25em 0.5em;
+			font-size: 1rem;
+			border: 1px solid $primary;
+			background-color: transparent;
+			border-radius: 0.5rem;
+			color: $primary;
+			&:hover {
+				background-color: $primary;
+				color: $primary-background;
+			}
+		}
+	}
+
+	.recipe-ingredients {
+		margin-top: 1rem;
+		input {
+			width: 40%;
+			border: 1px solid $primary;
+			border-radius: 0.25rem;
+			font-size: 1rem;
+		}
+		button {
+			width: 30%;
+			padding: 0.25em 0.5em;
+			font-size: 1rem;
+			border: 1px solid $primary;
+			background-color: transparent;
+			border-radius: 0.5rem;
+			color: $primary;
+			&:hover,
+			&:focus {
+				background-color: $primary;
+				color: $primary-background;
+			}
+		}
+	}
+}

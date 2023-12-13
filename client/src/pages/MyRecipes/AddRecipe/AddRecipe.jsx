@@ -1,6 +1,7 @@
 import { useMutation } from '@apollo/client';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './AddRecipe.scss';
 import { ADD_RECIPE } from '/src/utils/mutations';
 
 export default function AddRecipe() {
@@ -76,26 +77,28 @@ export default function AddRecipe() {
 	}
 
 	return (
-		<>
-			<button onClick={openDialog}>Add Recipe</button>
-			<dialog id="recipeDialog">
-				<form>
-					<div className="name">
-						<label htmlFor="name">Recipe Name</label>
-						<input value={formState.name} onChange={handleOnChange} name="name" type="text" id="name" />
-					</div>
+		<div className="add-recipe-container">
+			<button className="add-recipe" onClick={openDialog}>
+				Add Recipe
+			</button>
+			<dialog id="recipeDialog" className="add-recipe-dialog">
+				<div className="dialog-content">
+					<form className="recipe-info">
+						<div>
+							<label htmlFor="name">Recipe Name</label>
+							<input value={formState.name} onChange={handleOnChange} name="name" type="text" id="name" />
+						</div>
 
-					<div className="description">
-						<label htmlFor="description">Recipe Description</label>
-						<input value={formState.description} onChange={handleOnChange} name="description" id="description" />
-					</div>
+						<div className="description">
+							<label htmlFor="description">Recipe Description</label>
+							<input value={formState.description} onChange={handleOnChange} name="description" id="description" />
+						</div>
 
-					<button type="submit" onClick={addOneRecipe}>
-						Add
-					</button>
-				</form>
-				<div className="ingredients">
-					<form>
+						<button type="submit" onClick={addOneRecipe}>
+							Add
+						</button>
+					</form>
+					<form className="recipe-ingredients">
 						{ingredients.map((ingredient, index) => (
 							<div key={index}>
 								<input
@@ -118,6 +121,6 @@ export default function AddRecipe() {
 					</form>
 				</div>
 			</dialog>
-		</>
+		</div>
 	);
 }

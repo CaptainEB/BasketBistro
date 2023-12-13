@@ -1,7 +1,6 @@
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import './App.scss';
-import { RecipeListProvider } from './components/Contexts/ListContext';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import PageRoutes from './components/Router';
@@ -27,16 +26,14 @@ const client = new ApolloClient({
 
 export default function App() {
 	return (
-		<RecipeListProvider>
-			<ApolloProvider client={client}>
-				<header>
-					<Nav />
-				</header>
-				<main>
-					<PageRoutes />
-				</main>
-				<Footer />
-			</ApolloProvider>
-		</RecipeListProvider>
+		<ApolloProvider client={client}>
+			<header>
+				<Nav />
+			</header>
+			<main>
+				<PageRoutes />
+			</main>
+			<Footer />
+		</ApolloProvider>
 	);
 }
