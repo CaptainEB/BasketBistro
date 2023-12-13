@@ -1,3 +1,4 @@
+$primary: rgb(109, 89, 0);
 $recipe-image-background: rgb(230, 181, 76);
 
 .container {
@@ -27,4 +28,22 @@ $recipe-image-background: rgb(230, 181, 76);
 .recipe-description {
 	font-size: 1.5rem;
 	margin: 0.5rem;
+}
+
+.home-recipe-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	button {
+		flex: 1;
+		text-align: right;
+		background-color: transparent;
+		border-color: transparent;
+		font-size: 4rem;
+		color: $primary;
+		cursor: pointer;
+		&:hover {
+			color: darken($primary, 10%);
+		}
+	}
 }

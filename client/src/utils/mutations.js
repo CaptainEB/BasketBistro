@@ -54,3 +54,21 @@ export const CLEAR_LIST = gql`
 		clearList
 	}
 `;
+
+export const DELETE_RECIPE = gql`
+	mutation Mutation($recipeId: ID!) {
+		deleteRecipe(recipeId: $recipeId) {
+			name
+			_id
+		}
+	}
+`;
+
+export const ADD_TO_MY_RECIPES = gql`
+	mutation AddToMyRecipe($recipeId: ID!) {
+		addToMyRecipe(recipeId: $recipeId) {
+			_id
+			name
+		}
+	}
+`;
