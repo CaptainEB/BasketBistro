@@ -79,10 +79,10 @@ const resolvers = {
 				const user = await User.findById(context.user._id);
 				const newRecipe = new Recipe({ name, description, image, ingredients, user: user._id });
 				await newRecipe.save();
-				if (!user.recipes) {
-					user.recipes = []; // Initialize as an empty array if undefined
-				}
-				user.recipes.push(newRecipe);
+				// if (!user.recipe) {
+				// 	user.recipe = []; // Initialize as an empty array if undefined
+				// }
+				user.recipe.push(newRecipe);
 				await user.save();
 				return newRecipe;
 			}
@@ -92,12 +92,11 @@ const resolvers = {
 				throw new AuthenticationError('You are not authenticated');
 			}
 			// Find the recipe by ID and the user's ID to ensure they own the recipe
-			const recipe = await Recipe.findOne({ _id: recipeId, user: context.user._id });
-			if (!recipe) {
-				throw new Error('Recipe not found');
-			}
-			// Delete the recipe
-			await Recipe.findByIdAndRemove(recipeId);
+			const user = await User.findById(context.user._id);
+			const updatedUserRecipes = user.recipe.filter((recipe) => recipe._id.toString() !== recipeId);
+			user.recipe = updatedUserRecipes;
+			await user.save();
+			const recipe = await Recipe.findById(recipeId);
 			return recipe;
 		},
 		updateList: async (parent, { recipeId }, context) => {
