@@ -2,6 +2,7 @@ $primary: rgb(109, 89, 0);
 $recipe-image-background: rgb(230, 181, 76);
 
 .container {
+	font-family: 'Rethink Sans', sans-serif;
 	margin-top: 5%;
 	display: grid;
 	gap: 2rem;
@@ -37,7 +38,10 @@ $recipe-image-background: rgb(230, 181, 76);
 .recipe-info {
 	flex: 1;
 }
-.add-recipe-btn {
+.recipe-btns {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
 	button {
 		flex: 1;
 		text-align: right;
@@ -46,5 +50,8 @@ $recipe-image-background: rgb(230, 181, 76);
 		font-size: 4rem;
 		color: $primary;
 		cursor: pointer;
+		&:hover {
+			color: darken($primary, 10%);
+		}
 	}
 }

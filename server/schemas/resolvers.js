@@ -29,7 +29,8 @@ const resolvers = {
 		},
 		getUserRecipes: async (parent, args, context) => {
 			if (context.user) {
-				return await Recipe.find({ user: context.user._id });
+				const user = await User.findById(context.user._id).populate('recipe');
+				return user.recipe;
 			}
 		},
 	},
@@ -127,7 +128,20 @@ const resolvers = {
 			user.list = []; // Set the list to an empty array
 			await user.save();
 			return 'List cleared successfully';
-		}, 
+		},
+		addToMyRecipe: async (parent, { recipeId }, context) => {
+			if (context.user) {
+				try {
+					const user = await User.findById(context.user._id);
+					const recipe = await Recipe.findById(recipeId);
+					user.recipe.push(recipe);
+					await user.save();
+					return recipe;
+				} catch (error) {
+					console.error(error);
+				}
+			}
+		},
 	},
 };
 // User: {
