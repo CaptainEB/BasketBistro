@@ -48,3 +48,9 @@ export const UPDATE_LIST = gql`
 		}
 	}
 `;
+
+export const CLEAR_LIST = gql`
+	mutation Mutation {
+		clearList
+	}
+`;

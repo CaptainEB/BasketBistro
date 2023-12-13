@@ -1,0 +1,50 @@
+$primary: rgb(109, 89, 0);
+$primary-background: rgb(255, 252, 236);
+
+.shopping-ul {
+	& li {
+		list-style: circle;
+	}
+}
+
+.list-container {
+	font-family: 'Rethink Sans', sans-serif;
+	display: flex;
+	gap: 2rem;
+	& > * {
+		flex: 1;
+	}
+}
+
+.shopping-list {
+	font-size: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 0.25em;
+	margin: 0.5rem;
+	border-left: 1px dotted $primary;
+	& > * {
+		margin-left: 2rem;
+	}
+}
+
+.recipe-info {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.clear-btn {
+	cursor: pointer;
+	background-color: transparent;
+	border-color: $primary;
+	border-radius: 0.5rem;
+	color: $primary;
+	font-size: 1.5rem;
+	padding: 0.25em 0.5em;
+	margin: 1rem;
+	&:hover {
+		background-color: $primary;
+		color: $primary-background;
+	}
+}

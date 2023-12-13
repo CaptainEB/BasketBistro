@@ -2,6 +2,7 @@ import { useMutation } from '@apollo/client';
 import { useState } from 'react';
 import Auth from '../../utils/auth';
 import { LOGIN_USER } from '../../utils/mutations';
+import './Login.scss';
 
 export default function Login() {
 	const [formState, setFormState] = useState({ email: '', password: '' });
@@ -36,7 +37,7 @@ export default function Login() {
 
 	return (
 		<section>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="login-container">
 				<input value={formState.email} type="email" placeholder="Email" name="email" onChange={handleChange} />
 				<input value={formState.password} type="password" placeholder="Password" name="password" onChange={handleChange} />
 				<button type="submit">Login</button>

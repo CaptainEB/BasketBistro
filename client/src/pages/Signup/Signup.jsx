@@ -35,7 +35,7 @@ export default function Signup() {
 
 	return (
 		<section>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className="login-container">
 				<input value={formState.email} type="email" placeholder="Email" name="email" onChange={handleChange} />
 				<input value={formState.username} type="text" placeholder="User Name" name="username" onChange={handleChange} />
 				<input value={formState.password} type="password" placeholder="Password" name="password" onChange={handleChange} />
