@@ -10,7 +10,7 @@
 ![Alt Text](/images/Screenshot%202023-12-13%20at%208.04.17 PM.png)
 
 ## Motivation
-The Recipe App was created to simplify meal planning and grocery shopping. By seamlessly integrating recipe management and shopping list generation, the app aims to streamline the culinary experience and ensure that users never miss an item at the store. Additionally, the app fosters a sense of community through the sharing of recipes and culinary experiences.
+Bistro Basket was created to simplify meal planning and grocery shopping. By seamlessly integrating recipe management and shopping list generation, the app aims to streamline the culinary experience and ensure that users never miss an item at the store. Additionally, the app fosters a sense of community through the sharing of recipes and culinary experiences.
 
 ## Features
 - Input and store personal recipes and ingredients
