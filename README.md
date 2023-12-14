@@ -3,7 +3,7 @@
 [Deployed on Heroku](https://damp-reef-56861-e834c836fd5d.herokuapp.com/)
 
 
- BistroBasket is a full-stack MERN (MongoDB, Express, React, Node.js) application that allows users to input their own recipes and ingredients. Users can create, store, and share their recipes, as well as generate a corresponding shopping list with the ingredients. The app also enables users to explore and add other people's recipes to their collection and subsequently to their grocery list.
+ BasketBistro is a full-stack MERN (MongoDB, Express, React, Node.js) application that allows users to input their own recipes and ingredients. Users can create, store, and share their recipes, as well as generate a corresponding shopping list with the ingredients. The app also enables users to explore and add other people's recipes to their collection and subsequently to their grocery list.
 
  
 ![Alt Text](/images/Screenshot%202023-12-13%20at%208.03.49 PM.png)
