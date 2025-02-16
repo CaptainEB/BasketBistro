@@ -1,3 +1,4 @@
+@use 'sass:color';
 $primary: rgb(109, 89, 0);
 $recipe-image-background: rgb(230, 181, 76);
 
@@ -43,7 +44,7 @@ $recipe-image-background: rgb(230, 181, 76);
 		color: $primary;
 		cursor: pointer;
 		&:hover {
-			color: darken($primary, 10%);
+			color: color.scale($primary, $lightness: -10%);
 		}
 	}
 }
